@@ -2,8 +2,8 @@
     "manifest_version": 3,
     "default_locale": "en",
 
-    "name": "__MSG_extension_name__",
-    "description": "__MSG_extension_description__",
+    "name": "YouTube Subtitles to Claude",
+    "description": "Download YouTube subtitles and send to Claude for summarization",
     "version": "1.0",
 
     "icons": {
@@ -16,12 +16,13 @@
 
     "background": {
         "scripts": [ "background.js" ],
+        "persistent": false,
         "type": "module"
     },
 
     "content_scripts": [{
         "js": [ "content.js" ],
-        "matches": [ "*://example.com/*" ]
+        "matches": [ "https://*.youtube.com/*" ]
     }],
 
     "action": {
@@ -29,5 +30,15 @@
         "default_icon": "images/toolbar-icon.svg"
     },
 
-    "permissions": [ ]
+    "permissions": [
+        "activeTab",
+                "scripting",
+    ],
+    "host_permissions": [
+        "https://*.youtube.com/*",
+        "https://claude.ai/*"
+      ],
+    "browser_action": {
+            "default_popup": "popup.html"
+        }
 }
