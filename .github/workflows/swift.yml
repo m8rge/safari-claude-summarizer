@@ -33,7 +33,7 @@ jobs:
     - name: Package Extension
       run: |
         mkdir -p builds
-        cp -R build/Release/claude-summarizer.appex builds/
+        cp -R build/Release/claude-summarizer (macOS).appex builds/
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
