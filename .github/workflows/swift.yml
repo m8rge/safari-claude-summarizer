@@ -22,7 +22,7 @@ jobs:
     - name: Build Extension
       run: |
         xcodebuild -project "claude-summarizer.xcodeproj" \
-                  -scheme "ClaudeSummarizer" \
+                  -scheme "claude-summarizer (macOS)" \
                   -configuration Release \
                   -sdk macosx \
                   CODE_SIGN_IDENTITY="" \
