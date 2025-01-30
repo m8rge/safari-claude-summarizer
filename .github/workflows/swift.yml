@@ -30,10 +30,10 @@ jobs:
                   CODE_SIGNING_ALLOWED=NO \
                   clean build
     
-    # - name: Package Extension
-    #   run: |
-    #     mkdir -p builds
-    #     cp -R build/Release/* builds/
+    - name: Package Extension
+      run: |
+        mkdir -p builds
+        cp -R Build/Products/Release/claude-summarizer\ Extension.appex builds/
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
