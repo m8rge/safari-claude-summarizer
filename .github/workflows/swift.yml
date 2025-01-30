@@ -30,18 +30,18 @@ jobs:
                   CODE_SIGNING_ALLOWED=NO \
                   clean build
 
-    - name: List Directory Contents
-      run: |
-        ls -la
+    # - name: List Directory Contents
+    #   run: |
+    #     ls -la
         
-    - name: Package Extension
-      run: |
-        mkdir -p builds
-        cp -R Build/Products/Release/claude-summarizer\ Extension.appex builds/
+    # - name: Package Extension
+    #   run: |
+    #     mkdir -p builds
+    #     cp -R Build/Products/Release/claude-summarizer\ Extension.appex builds/
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: safari-extension
-        path: builds/
+        path: ~/Library/Developer/Xcode/DerivedData/
         retention-days: 5
