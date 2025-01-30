@@ -29,7 +29,11 @@ jobs:
                   CODE_SIGNING_REQUIRED=NO \
                   CODE_SIGNING_ALLOWED=NO \
                   clean build
-    
+
+    - name: List Directory Contents
+      run: |
+        ls -la
+        
     - name: Package Extension
       run: |
         mkdir -p builds
